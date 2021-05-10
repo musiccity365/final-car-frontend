@@ -1,46 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
-<head>
+  <head>
     <meta charset="utf-8">
     <title>Used Car Lot</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-</head>
+  </head>
+  <body>
 
-<body>
-
-    <!-- Select New View-->
-    <h2>Filter by Manufacture Origin</h2>
-    <div id="origin-container"></div>
-
-    <h2>Check out my complete Hooptie Inventory</h2>
-    <ul id="car-list">
-    </ul>
-
-    <h3>Add a new Hooptie:</h3>
-    <form id="car-form">
-        <label for="car-make">Make:</label>
-        <input type="text" name="make" id="car-make"><br><br>
-        <label for="car-model">Model:</label>
-        <input type="text" name="model" id="car-model"><br><br>
-        <label for="car-year">Year:</label>
-        <select id="ddlYears" name="ddlYears"></select><br><br>
-        <label for="car-mileage">Mileage:</label>
-        <input type="number" name="mileage" id="mileage" min="0" max="999999"><br><br>
-
-        <!-- Select New Car Origin -->
-        <label for="origin-dropdown">Manufacturer Origin:</label>
-        <select name="origin_id" id="origin-dropdown">
-        </select><br><br>
-
-        <input type="submit" value="Create">
-    </form>
 
     <script type="application/javascript" src="src/origin.js" charset="UTF-8"></script>
-    <script type="application/javascript" src="src/originApi.js" charset="UTF-8"></script>
-    <script type="application/javascript" src="src/car.js" charset="UTF-8"></script>
-    <script type="application/javascript" src="src/carApi.js" charset="UTF-8"></script>
+      <script type="application/javascript" src="src/originApi.js" charset="UTF-8"></script>
+      <script type="application/javascript" src="src/car.js" charset="UTF-8"></script>
+      <script type="application/javascript" src="src/carApi.js" charset="UTF-8"></script>
     <script type="application/javascript" src="src/index.js" charset="UTF-8"></script>
-</body>
-
+  </body>
 </html>
