@@ -1,16 +1,16 @@
 class Car {
 
-    static all = []; // this variable gives us access to all of our Cars
+    static all = [] // this variable gives us access to all of our Cars
 
     // NEW CONTAINER FOR CAR-LIST
     static container = document.getElementById('car-list')
 
-    constructor(id, make, model, year, miles, originID) { //use ES6 - destructuring to take actions out of object and immediately assign them to variables
+    constructor(id, make, model, color, year, originID) { //use ES6 - destructuring to take actions out of object and immediately assign them to variables
         this.id = id
         this.make = make
         this.model = model
+        this.color = color
         this.year = year
-        this.miles = miles
         this.originID = originID
 
         this.element = document.createElement('li')
@@ -27,11 +27,9 @@ class Car {
         <div data-id="${this.id}">
             $<strong class="make">${this.make}</strong>
             <span class="model">${this.model}</span>
+            <span class="color">${this.color}</span>
             <span class="year">${this.year}</span>
-            <span class="miles">${this.miles}</span>
         </div>
-        <button class="edit" data-id="${this.id}">Edit</button>
-        <button class="delete" data-id="${this.id}">Delete</button>
     `
         return this.element
     }
