@@ -22,5 +22,40 @@ class Car {
         Car.all.push(this)
     }
 
-    
+    renderLi() {
+        this.element.innerHTML = `
+        <div data-id="${this.id}">
+            $<strong class="make">${this.make}</strong>
+            <span class="model">${this.model}</span>
+            <span class="year">${this.year}</span>
+            <span class="miles">${this.miles}</span>
+        </div>
+        <button class="edit" data-id="${this.id}">Edit</button>
+        <button class="delete" data-id="${this.id}">Delete</button>
+    `
+        return this.element
+    }
+
+    attachToDom() {
+        list.appendChild(this.renderLi())
+    }
+    static filterByOrigin(filteredOrigin) {
+
+        if (filteredOrigin) {
+            for (const car of Car.all) {
+                //convert (filteredOrigin.id) data type to match foreign key attribute (car.originID) to in order to prevent errors when comparing the attribute actions. In this case, we use parseInt(filteredOrigin.id) to convert the filteredOrigin.id data type from string to integer
+                if (car.originID === parseInt(filteredOrigin.id)) {
+                    car.element.style.display = ""
+                } else {
+                    car.element.style.display = "none"
+                }
+            }
+
+        } else {
+            Car.container.innerHTML = '' //use this to remove all cars from the DOM, to prevent duplicate entries.
+            for (const car of Car.all) {
+                car.attachToDom()
+            }
+        }
+    }
 }
