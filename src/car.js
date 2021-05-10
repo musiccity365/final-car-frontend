@@ -21,4 +21,6 @@ class Car {
 
         Car.all.push(this)
     }
+
+    
 }

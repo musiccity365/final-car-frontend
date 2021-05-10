@@ -12,4 +12,41 @@ class Origin {
 
         Origin.all.push(this)
     }
+
+    cars() {
+        return Car.all.filter((car) => car.originID === parseInt(this.id))
+    }
+
+    render() {
+        this.element.innerText = this.name
+        this.element.id = `origin-${this.id}`
+        return this.element
+    }
+
+    addToDom() {
+        Origin.originContainer.append(this.render())
+        this.addListeners()
+    }
+
+    addListeners() {
+        this.element.addEventListener('click', this.setActiveOrigin)
+    }
+
+    setActiveOrigin = (e) => {
+        let filteredOrigin
+
+        Origin.all.forEach(o => { // use arrow function here
+            if (o.element === this.element && !this.active) {
+                // debugger
+                o.element.classList.add('activated')
+                o.active = true
+                filteredOrigin = o
+            } else {
+                o.element.classList.remove('activated')
+                o.active = false
+            }
+
+        })
+        Car.filterByOrigin(filteredOrigin)
+    }
 }
