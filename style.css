@@ -1,0 +1,51 @@
+html {
+    background: linear-gradient(200deg, rgb(233, 210, 8), rgb(7, 53, 139));
+    background-size: 600% 600%;
+    background-attachment: fixed;
+    height: 100%;
+    min-height: 100%;
+    animation: TackyGradient 12s ease infinite;
+}
+
+html * {
+    font-family: sans-serif !important;
+}
+
+.field {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 75% 25%;
+}
+
+button {
+    background-color: white;
+    border-radius: 0px 5px 5px 0px;
+    border: 1px solid rgb(231, 108, 27);
+    color: rgb(145, 40, 230);
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.activated {
+    background-color: rgb(40, 230, 40);
+    border-radius: 0px 5px 5px 0px;
+    border: 1px solid;
+    color: white;
+}
+
+.btn:hover {
+    background-color: rgb(230, 240, 250);
+}
+
+input[type="text"] {
+    padding: 10px 20px;
+    border-radius: 5px 0px 0px 5px;
+    border: 1px solid rgb(220, 225, 230);
+    font-size: 16px;
+}
+
+input:focus {
+    outline: none;
+}
